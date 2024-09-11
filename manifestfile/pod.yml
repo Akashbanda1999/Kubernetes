@@ -14,3 +14,19 @@ spec:
         - name: http
           containerPort: 80
           protocol: TCP
+
+------------------------
+
+apiVersion: v1 
+kind: Service
+metadata:
+        name: lb  #cluster 
+spec:
+    selector:
+          app: mypod  
+    type: LoadBalancer 
+    ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: nginx
