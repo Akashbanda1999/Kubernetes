@@ -4,7 +4,7 @@ metadata:  #like a tag
         name: mypod1
         namespace: weatherappprodenv
         labels: 
-            app: newapp
+            app: new-app
 spec:
  containers:
     - name: mypod-cont1
