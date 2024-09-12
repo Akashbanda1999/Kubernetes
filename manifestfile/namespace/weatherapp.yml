@@ -1,13 +1,13 @@
 apiVersion:  v1  #acts a manuall to your system
 kind: Pod
 metadata:  #like a tag
-        name: mypod1
+        name: mypod
         namespace: weatherappprodenv
         labels: 
             app: new-app
 spec:
  containers:
-    - name: mypod-cont1
+    - name: mypod-cont
       image: nginx:latest
       resources: 
           requests:
