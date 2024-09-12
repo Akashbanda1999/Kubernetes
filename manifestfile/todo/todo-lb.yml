@@ -30,7 +30,7 @@ metadata:
   namespace: microstatic
 
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: todo
   ports:
