@@ -1,0 +1,27 @@
+apiVersion: app/v1
+kind: ReplicaSet
+metadata: 
+    name:  empappreplica
+    labels: 
+      app:  empappreplica
+spec:
+    replicas: 4 #how many replica's you want to create on basis of tempalate 
+    template:
+      metadata:  #like a tag , all the letter shuold be in lowercase
+        labels:
+          app: empappreplica
+      spec:
+        containers:
+        - name: mypod-cont
+          image: akashbanda/employee:latest
+          resources: 
+            requests:
+              cpu: "50m"
+              memory: "90Mi"        
+        ports:  
+          - name: http
+            containerPort: 80
+            protocol: TCP
+    selectors:
+        matchexpressions:
+            -{key: app, operator: In, values: [empapperplica, mobappreplica]}
