@@ -21,7 +21,7 @@ spec:
                     cpu: "50m"
                     memory: "90Mi"        
               ports:  
-                - name: http
+                - name: dbport
                   containerPort: 3306
                   protocol: TCP
               env: 
