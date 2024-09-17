@@ -28,4 +28,5 @@ spec:
                 - name: MYSQL_ROOT_PASSWORD
                   value: "1234"
     selector:
-          app: webapprc
+        matchlabels:
+          app: stateful
