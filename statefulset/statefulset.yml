@@ -1,17 +1,16 @@
-
-apiVersion: app/v1
-kind:  StatefulSet
+apiVersion: apps/v1
+kind: StatefulSet 
 metadata: 
-       name: stateful
+       name: state
        labels:
-            app: stateful
+            app: state
 spec: 
-    replicas: 5  #how many replica's you want to create on the basis of template
+    replicas: 4  #how many replica's you want to create on the basis of template
     template:
       metadata:  #like a tag
-         name: stateful
+         name: state
          labels: 
-            app: stateful
+            app: state
       spec:
         containers:
             - name: mypodss-cont
@@ -24,9 +23,9 @@ spec:
                 - name: dbport
                   containerPort: 3306
                   protocol: TCP
-              env: 
-                - name: MYSQL_ROOT_PASSWORD
-                  value: "1234"
+              env:
+                 - name: MYSQL_ROOT_PASSWORD
+                   value: "1234"
     selector:
-        matchlabels:
-          app: stateful
+        matchLabels:
+          app: state
