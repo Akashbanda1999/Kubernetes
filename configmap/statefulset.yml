@@ -5,7 +5,7 @@ metadata:
        labels:
             app: state
 spec: 
-    replicas: 4  #how many replica's you want to create on the basis of template
+    replicas: 5  #how many replica's you want to create on the basis of template
     template:
       metadata:  #like a tag
          name: state
@@ -24,16 +24,17 @@ spec:
                   containerPort: 3306
                   protocol: TCP
               env:
-                  - name: MYSQL_ROOT_PASSWORD
-                    valueForm: 
-                      configMapKeyRef:
+                - name: MYSQL_ROOT_PASSWORD
+                  valueFrom:
+                          configMapKeyRef:
                               name: configmap
-                              key: DB_PASSWORD
-                  - name: MYSQL_USER_NAME
-                    valueForm: 
-                      configMapKeyRef:
+                              key: DB_PASSWORD 
+                - name: MYSQL_USER_NAME
+                  valueFrom:
+                          configMapKeyRef:
                               name: configmap
-                              key: DB_USER
+                              key: DB_USER 
+                          
     selector:
         matchLabels:
           app: state
