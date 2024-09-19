@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
     name: akash 
     labels:
-          akash
+          app: akash
 spec:
     replicas: 10
     strategy: 
