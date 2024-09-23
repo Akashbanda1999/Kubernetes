@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tomcat-deployment-$ blue
+  name: tomcat-deployment-$ TARGET_ROLE=blue
 spec:
   replicas: 2
   template:
     metadata:
       labels:
         app: tomcat
-        role: $ blue
+        role: $ TARGET_ROLE=blue
     spec:
       containers:
       - name: tomcat-container
