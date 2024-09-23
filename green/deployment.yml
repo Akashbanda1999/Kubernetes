@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: tomcat:10.1  # New version
+        image: tomcat:latest  # New version
         ports:
         - containerPort: 80
