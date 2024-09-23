@@ -4,13 +4,13 @@ metadata:
   name: tomcat-service
   labels:
     app: tomcat
-    role: $ blue
+    role: $ TARGET_ROLE=blue
     env: prod
 spec:
   type: LoadBalancer
   selector:
     app: tomcat
-    role: $ blue
+    role: $ TARGET_ROLE=blue
   ports:
     - port: 80
       targetPort: 8080
