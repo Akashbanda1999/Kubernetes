@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: akashbanda/employee:latest  # New version
+        image: akashbanda/todo:latest  # New version
         ports:
         - containerPort: 80
