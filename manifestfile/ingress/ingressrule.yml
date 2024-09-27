@@ -11,14 +11,14 @@ spec:
     http:
       paths:
         
-         -  path: /
+         -  path: /todo
             pathType: Prefix
             backend:
               service: 
                 name: frontendsrv
                 port:
                   number: 80
-         -  path: /student
+         -  path: /employee
             pathType: Prefix
             backend:
               service: 
