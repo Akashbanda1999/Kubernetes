@@ -18,3 +18,10 @@ spec:
                 name: frontendsrv
                 port:
                   number: 80
+         -  path: /todo
+            pathType: Prefix
+            backend:
+              service: 
+                name: frontendsrv
+                port:
+                  number: 80
