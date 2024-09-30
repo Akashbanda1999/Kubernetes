@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployappfront
+  name: deployappback
   labels:
-      app: deployappfront
+      app: deployappback
 spec:
     replicas: 2     #desiredstate
     strategy: 
           type: RollingUpdate
     selector: 
           matchLabels:
-            app: deployappfront
+            app: deployappback
     template: 
         metadata: 
             labels: 
-              app: deployappfront   
+              app: deployappback   
         spec: 
           containers:
-             - name: frontendapp
-               image: swapnil0078/student:latest
+             - name: backendapp
+               image: dmirge/student:latest
                ports:
                   - containerPort: 8080
                     protocol: TCP
@@ -38,7 +38,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: deployappfront
+    name: deployappback
   minReplicas: 1
   maxReplicas: 4
   metrics:
